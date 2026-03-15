@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="mg">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Portfolio de Rafanomezantsoa Donnas, Développeur web débutant spécialisé HTML, CSS et JavaScript.">
+        <meta charset="UTF-8">
+        <title>Rafanomezantsoa Donnas | Développeur Web</title>
+        <style>
+             body {
+                font-family: Arial, sans-serif;
+                background: #f0f0f0;
+                margin: 0;
+                padding: 25px;
+                background-color: white;
+                color: black;
+                font-size: 25px;
+             }
+
+             .dark-mode {
+                background-color: black;
+                color: white;
+             }
+
+             .dark-mode section {
+                background: #1e1e1e;
+                color: white;
+             }
+
+             .dark-mode .card {
+               background: #1e1e1e;
+               color: white;
+             }
+
+             .dark-toggle {
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                background: #333;
+                color: white;
+                border-radius: 20px;
+             }
+
+             header {
+                background: #0066cc;
+                color: white;
+                padding: 20px;
+                text-align: center;
+             }
+
+             header button {
+               margin-top: 10px;
+               background: #ff9800;
+             }
+
+             header button:hover {
+               background: #e68900;
+             }
+
+             section {
+                background: white;
+                margin: 20px auto;
+                padding: 20px;
+                width: 80%;
+                border-radius: 10px;
+                opacity: 0;
+                transform: translateY(30px);
+                transition: all 0.8s ease;
+             }
+
+             section.show {
+               opacity: 1;
+               transform: translateY(0);
+             }
+
+             section:hover {
+                transform: scale(1.02);
+                box-shadow: 0 10px 25px rgba(0,0,0, 0.2);
+             }
+
+             ul {
+                padding-left: 20px;
+             }
+
+             form input, form textarea {
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 10px;
+             }
+
+             button {
+                background: #0066cc;
+                color: white;
+                border: none;
+                padding: 10px;
+                cursor: pointer;
+                transition: transform 0.2s ease, background 0.3s;
+             }
+
+             button:active {
+                transform: scale(0.95);
+                background: #004a99;
+             }
+
+             @media(max-width:600px) {
+                section {
+                    width: 95%;
+                }
+
+                .projects{
+                  flex-direction: column;
+                  align-items: center;
+                }
+
+                .menu-btn{
+                  display: block;
+                  margin: auto;
+                }
+
+                .menu{
+                  display: none;
+                  flex-direction: column;
+                  text-align: center;
+                }
+
+                .menu a{
+                  display: block;
+                  padding: 10px;
+                }
+
+                .menu.show{
+                  display: flex;
+                }
+             }
+
+             nav {
+                position: sticky;
+                top: 0;
+                background: #0066cc;
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+             }
+
+             nav a {
+                color: white;
+                margin: 10px;
+                text-decoration: none;
+                font-weight: bold;
+             }
+
+             nav a:hover {
+                text-decoration: underline;
+             }
+
+             .contact {
+                padding: 16px;
+             }
+
+             html {
+                scroll-behavior: smooth;
+                scroll-padding-top: 90px;
+             }
+
+             * {box-sizing: border-box;}
+
+             .bar {
+                width: 100%;
+                background-color: #ddd;
+             }
+
+             .progress {
+                text-align: right;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                color: white;
+                height: 25px;
+                transition: width 2s;
+                font-size: 14px;
+             }
+
+             .html, .css, .js {
+                width: 0;
+             }
+
+             footer {
+               text-align: center;
+               padding: 15px;
+               color: #777;
+             }
+
+             .projects {
+               display: flex;
+               gap: 20px;
+               flex-wrap: wrap;
+               justify-content: center;
+             }
+
+             .card {
+               background: white;
+               border-radius: 10px;
+               width: 280px;
+               padding: 15px;
+               text-align: center;
+               box-shadow: 0 5px 15px rgb(0,0,0,0.2);
+               transition: transform 0.3s;
+             }
+
+             .card:hover {
+               transform: translateY(-5px);
+             }
+
+             .card img {
+               width: 100%;
+               border-radius: 10px;
+             }
+
+             .menu-btn{
+               display: none;
+               background: none;
+               color: white;
+               font-size: 30px;
+               border: none;
+             }
+
+             .menu{
+               display: flex;
+               justify-content: center;
+             }
+
+             .profile{
+               width: 150px;
+               height: 150px;
+               border-radius: 50%;
+               object-fit: cover;
+               border: 4px solid white;
+               margin-bottom: 10px;
+               transition: transform 0.3s;
+             }
+
+             .profile:hover{
+               transform: scale(1.05);
+             }
+
+        </style>
+    </head>
+
+    <body>
+
+        <button class="dark-toggle" onclick="myFunction()">🌙</button>
+        
+        <header>
+
+         <img src="profil.png" class="profile" alt="Photo Rafanomezantsoa Donnas">
+
+            <h1>Rafanomezantsoa Donnas</h1>
+            <p>Développeur web débutant</p>
+
+            <a href="cv-donnas.pdf" download>
+               <button>Télécharger mon CV</button>
+            </a>
+        </header>
+
+        <nav>
+
+         <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+         <div class="menu">
+            <a href="#about">Momba ahy</a>
+            <a href="#skills">Fahaiza-manao</a>
+            <a href="#projet">Projet</a>
+            <a href="#contact">Contact</a>
+         </div>
+            
+        </nav>
+
+        <main>
+
+         <section id="about">
+            <h2>Momba ahy</h2>
+            <p>Mianatra développent web aho. Tanjoko ny hanangana
+                site web tsotra sy madio.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>Fahaiza-manao</h2>
+            
+            <p>HTML</p>
+            <div class="bar">
+                <div class="progress html">80%</div>
+            </div>
+
+            <p>CSS</p>
+            <div class="bar">
+                <div class="progress css">70%</div>
+            </div>
+
+            <p>JavaScript</p>
+            <div class="bar">
+                <div class="progress js">50%</div>
+            </div>
+        </section>
+
+        <section id="projet">
+            <h2> Mes Projets</h2>
+
+            <div class="projects">
+
+               <div class="card">
+                  <img src="https://via.placeholder.com/300x200">
+                  <h3>Site personnel</h3>
+                  <p>Site CV développé avec HTML, CSS et JavaScript.</p>
+                  <button>Voir projet</button>
+               </div>
+
+               <div class="card">
+                  <img src="https://via.placeholder.com/300x200">
+                  <h3>Formulaire JavaScript</h3>
+                  <p>Formulaire avec validation JavaScript.</p>
+                  <button>Voir projet</button>
+               </div>
+
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+
+            <form id="contactForm">
+                <input type="text" id="anarana" placeholder="Anaranao">
+                <input type="email" id="email" placeholder="Email">
+                <textarea id="hafatra" placeholder="Hafatrao"></textarea>
+
+                <button type="button" onclick="salama()">Alefa</button>
+                <p id="message"></p>
+            </form>
+        </section>
+        </main>
+
+        <footer>
+         <p>© 2026-Rafanomezantsoa Donnas</p>
+         <p>Made with ❤️ in Madagasikara</p>
+        </footer>
+
+        <script>
+            function salama() {
+                let anarana = document.getElementById("anarana").value.trim();
+                let email = document.getElementById("email").value.trim();
+                let hafatra = document.getElementById("hafatra").value.trim();
+                let message = document.getElementById("message");
+
+                let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (!anarana || !email || !hafatra) {
+                  message.style.color = "red";
+                  message.innerHTML = "Fenoy azafady ny saha rehetra ❌";
+                  return;
+                }
+
+                if (anarana.length < 2) {
+                  message.style.color = "red";
+                  message.innerHTML = "Anarana fohy loatra ❌";
+                  return;
+                }
+
+                if (!emailRegex.test(email)) {
+                  message.style.color = "red";
+                  message.innerHTML = "Email tsy valide ❌";
+                  return;
+                }
+
+                message.style.color = "green";
+                message.innerHTML = "Hafatra voaray tsara ✔️ Misaotra anao " + anarana + " 😊";
+            }
+
+            // 👉 Dark mode + localstorage
+            function myFunction() {
+               document.body.classList.toggle("dark-mode");
+
+               if (document.body.classList.contains("dark-mode")) {
+                  localStorage.setItem("theme", "dark");
+               } else {
+                  localStorage.setItem("theme", "light");
+               }
+            }
+
+            // 👉 Rehefa misokatra ny page
+            window.onload = function () {
+               // progress bar
+               document.querySelector(".html").style.width = "80%";
+               document.querySelector(".css").style.width = "70%";
+               document.querySelector(".js").style.width = "50%";
+
+               // theme
+               if (localStorage.getItem("theme") === "dark") {
+                  document.body.classList.add("dark-mode");
+               }
+            };
+
+            const section = document.querySelectorAll("section");
+
+            function revealOnScroll() {
+                const trigger = window.innerHeight * 0.85;
+
+                section.forEach(section => {
+                    const top = section.getBoundingClientRect().top;
+
+                    if (top < trigger) {
+                        section.classList.add("show");
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", revealOnScroll);
+            revealOnScroll();
+
+            function toggleMenu(){
+               document.querySelector(".menu").classList.toggle("show");
+            }
+        </script>
+    </body>
+</html>
