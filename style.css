@@ -4,9 +4,8 @@
                 background: #f0f0f0;
                 margin: 0;
                 padding: 25px;
-                background-color: white;
                 color: black;
-                font-size: 25px;
+                font-size: 18px;
              }
 
              .dark-mode {
@@ -66,7 +65,7 @@
              }
 
              section:hover {
-                transform: scale(1.02);
+                transform: translateY(0) scale(1.02);
                 box-shadow: 0 10px 25px rgba(0,0,0, 0.2);
              }
 
@@ -90,7 +89,8 @@
              }
 
              button:hover {
-              background: #004a99;
+               background: #004a99;
+               transform: translateY(-2px);
               
              }
 
@@ -168,6 +168,7 @@
              }
 
              .progress {
+                background: #0066cc;
                 text-align: right;
                 padding-top: 10px;
                 padding-bottom: 10px;
