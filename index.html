@@ -2,7 +2,7 @@
 <html lang="mg">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Portfolio de Rafanomezantsoa Donnas, développeur spécialisé en HTML, CSS et JavaScript à Madagascar.">
+        <meta name="description" content="Portfolio de Rafanomezantsoa Donnas, Développeur web débutant spécialisé HTML, CSS et JavaScript.">
         <meta charset="UTF-8">
         <title>Rafanomezantsoa Donnas | Développeur Web</title>
 
@@ -20,7 +20,7 @@
         
         <header>
 
-         <img src="profil.png" alt="Donnas" class="profile">
+         <img src="profil.png" alt="Donnas">
 
             <h1>Rafanomezantsoa Donnas</h1>
             <p>Développeur web débutant</p>
@@ -80,150 +80,7 @@
                   <img src="https://via.placeholder.com/300x200">
                   <h3>Site personnel</h3>
                   <p>Site CV développé avec HTML, CSS et JavaScript.</p>
-                  <button onclick="window.open('https://github.com/rafanomezantsoa419/donnas-portfolio')">Voir projet</button>
-               </div>
-
-               <div class="card">
-                  <img src="https://via.placeholder.com/300x200">
-                  <h3>Formulaire JavaScript</h3>
-                  <p>Formulaire avec validation JavaScript.</p>
                   <button>Voir projet</button>
-               </div>
-
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Contact</h2>
-
-            <form id="contactForm">
-                <input type="text" id="anarana" placeholder="Anaranao" required>
-                <input type="email" id="email" placeholder="Email">
-                <textarea id="hafatra" placeholder="Hafatrao"></textarea>
-
-                <button type="button" onclick="salama()">Alefa</button>
-                <p id="message"></p>
-            </form>
-        </section>
-        </main>
-
-        <footer>
-         <p>© 2026-Rafanomezantsoa Donnas</p>
-         <p>Made with ❤️ in Madagasikara</p>
-        </footer>
-
-        <script>
-            function salama() {
-                let anarana = document.getElementById("anarana").value.trim();
-                let email = document.getElementById("email").value.trim();
-                let hafatra = document.getElementById("hafatra").value.trim();
-                let message = document.getElementById("message");
-
-                let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-                if (!anarana || !email || !hafatra) {
-                  message.style.color = "red";
-                  message.innerHTML = "Fenoy azafady ny saha rehetra ❌";
-                  return;
-                }
-
-                if (anarana.length < 2) {
-                  message.style.color = "red";
-                  message.innerHTML = "Anarana fohy loatra ❌";
-                  return;
-                }
-
-                if (!emailRegex.test(email)) {
-                  message.style.color = "red";
-                  message.innerHTML = "Email tsy valide ❌";
-                  return;
-                }
-
-                message.style.color = "green";
-                <!DOCTYPE html>
-<html lang="mg">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Portfolio de Rafanomezantsoa Donnas, Développeur web débutant spécialisé HTML, CSS et JavaScript.">
-        <meta name="description" content="cv et portfolio de Rafanomezantsoa Donnas, développent web débutant à Madagasikara">
-        <meta charset="UTF-8">
-        <title>Rafanomezantsoa Donnas | Développeur Web</title>
-
-        <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-
-        <link rel="stylesheet" href="css/style.css">
-
-        <link rel="icon" href="images/profil.png">
-       
-    </head>
-
-    <body>
-
-        <button class="dark-toggle" onclick="myFunction()">🌙</button>
-        
-        <header>
-
-         <img src="images/profil.png" alt="Donnas">
-
-            <h1>Rafanomezantsoa Donnas</h1>
-            <p>Développeur web débutant</p>
-
-            <a href="pdf/cv-donnas.pdf" download>
-               <button>Télécharger mon CV</button>
-            </a>
-        </header>
-
-        <nav>
-
-         <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-         <div class="menu">
-            <a href="#about">Momba ahy</a>
-            <a href="#skills">Fahaiza-manao</a>
-            <a href="#projet">Projet</a>
-            <a href="#contact">Contact</a>
-         </div>
-            
-        </nav>
-
-        <main>
-
-         <section id="about">
-            <h2>Momba ahy</h2>
-            <p>Mianatra développent web aho. Tanjoko ny hanangana
-                site web tsotra sy madio.
-            </p>
-        </section>
-
-        <section id="skills">
-            <h2>Fahaiza-manao</h2>
-            
-            <p>HTML</p>
-            <div class="bar">
-                <div class="progress html">80%</div>
-            </div>
-
-            <p>CSS</p>
-            <div class="bar">
-                <div class="progress css">70%</div>
-            </div>
-
-            <p>JavaScript</p>
-            <div class="bar">
-                <div class="progress js">50%</div>
-            </div>
-        </section>
-
-        <section id="projet">
-            <h2> Mes Projets</h2>
-
-            <div class="projects">
-
-               <div class="card">
-                  <img src="https://via.placeholder.com/300x200">
-                  <h3>Site personnel</h3>
-                  <p>Site CV développé avec HTML, CSS et JavaScript.</p>
-                  <button onclik="window.open('https://github.com')">Voir projet</button>
                </div>
 
                <div class="card">
@@ -283,57 +140,7 @@
                 }
 
                 message.style.color = "green";
-                message.innerHTML = "✔️ Hafatra voaray! Misaotra anao " + anarana + " 😊";
-            }
-
-            // 👉 Dark mode + localstorage
-            function myFunction() {
-               document.body.classList.toggle("dark-mode");
-
-               if (document.body.classList.contains("dark-mode")) {
-                  localStorage.setItem("theme", "dark");
-               } else {
-                  localStorage.setItem("theme", "light");
-               }
-            }
-
-            // 👉 Rehefa misokatra ny page
-            window.onload = function () {
-               // progress bar
-               document.querySelector(".html").style.width = "80%";
-               document.querySelector(".css").style.width = "70%";
-               document.querySelector(".js").style.width = "50%";
-
-               // theme
-               if (localStorage.getItem("theme") === "dark") {
-                  document.body.classList.add("dark-mode");
-               }
-            };
-
-            const section = document.querySelectorAll("section");
-
-            function revealOnScroll() {
-                const trigger = window.innerHeight * 0.85;
-
-                section.forEach(section => {
-                    const top = section.getBoundingClientRect().top;
-
-                    if (top < trigger) {
-                        section.classList.add("show");
-                    }
-                });
-            }
-
-            window.addEventListener("scroll", revealOnScroll);
-            revealOnScroll();
-
-            function toggleMenu(){
-               document.querySelector(".menu").classList.toggle("show");
-            }
-        </script>
-    </body>
-</html>
-
+                message.innerHTML = "Hafatra voaray tsara ✔️ Misaotra anao " + anarana + " 😊";
             }
 
             // 👉 Dark mode + localstorage
