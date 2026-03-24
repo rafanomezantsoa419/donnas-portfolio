@@ -205,6 +205,16 @@
                color: #777;
              }
 
+              footer a, #contact a {
+                color: #ff9800;
+                text-decoration: none;
+                font-weidht: bold;
+              }
+
+              footer a:hover, #contact a:hover {
+                text-decoration: underlin;
+              }
+
              .projects {
                display: flex;
                gap: 20px;
