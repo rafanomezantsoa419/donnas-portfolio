@@ -49,9 +49,7 @@
 
          <section id="about">
             <h2>Momba ahy</h2>
-            <p>Mianatra développent web aho. Tanjoko ny hanangana
-                site web tsotra sy madio.
-            </p>
+            <p>Développeur web débutant passionné par la création de site modernes et performants.</p>
         </section>
 
         <section id="skills">
@@ -87,14 +85,14 @@
                   <img src="projet1.jpg">
                   <h3>Site personnel</h3>
                   <p>Site CV développé avec HTML, CSS et JavaScript.</p>
-                  <button onclick="window.open('https://github.com/rafanomezantsoa419/donnas-portfolio')">Voir projet</button>
+                  <button onclick="window.open('https://github.com/rafanomezantsoa419/donnas-portfolio', target="_blank")">Voir projet</button>
                </div>
 
                <div class="card">
                   <img src="projet2.jpg">
                   <h3>Formulaire JavaScript</h3>
                   <p>Formulaire avec validation JavaScript.</p>
-                  <button onclick="window.open('https://github.com/rafanomezantsoa419/donnas-portfolio')">Voir projet</button>
+                  <button onclick="window.open('https://github.com/rafanomezantsoa419/donnas-portfolio', target="_blank")">Voir projet</button>
                </div>
 
             </div>
@@ -103,7 +101,7 @@
         <section id="contact">
             <h2>Contact</h2>
             <p>Email: <a href="mailto:rafanomezantsoadonnas5@gmail.com">Alefa mail</a></p>
-            <p>GitHub: <a href="https//github.com/rafanomezantsoa419" target="_blank">Mon profil GitHub</a></p>
+            <p>GitHub: <a href="https://github.com/rafanomezantsoa419" target="_blank">Mon profil GitHub</a></p>
 
             <form id="contactForm">
                 <input type="text" id="anarana" placeholder="Anaranao">
@@ -118,6 +116,15 @@
 
         <footer>
          <p>© 2026-Rafanomezantsoa Donnas</p>
+
+         <p>
+             <a href="https://github.com/rafanomezantsoa419" target="_blank">GitHub</a>
+             <a href="https://linkedin.com/rafanomezantsoa-donnas" target="_blank">LinkedIn</a>
+             <a href="https://instagram.com/rafanomezantsoa-donnas" target="_blank">Instagram</a>
+             <a href="https://telegram.com/rafanomezantsoa-donnas" target="_blank">Telegram</a>
+             <a href="https://x.com/rafanomezantsoa-donnas" target="_blank">X</a>
+         </p>
+            
          <p>Made with ❤️ in Madagasikara</p>
         </footer>
 
@@ -142,8 +149,9 @@
                 .then(function(response) {
                     message.style.color = "green";
                     message.innerHTML = "Hafatra nalefa ✔️";
+                    document.getElementById("contactForm").reset();
                 }, function(error){
-                    mesage.style.color = "red";
+                    message.style.color = "red";
                     message.innerHTML = "Nisy olana ❌";
                 });
             }
@@ -162,6 +170,7 @@
             // 👉 Rehefa misokatra ny page
             window.onload = function () {
                // progress bar
+               document.querySelector(".github").style.width = "60%"
                document.querySelector(".html").style.width = "80%";
                document.querySelector(".css").style.width = "70%";
                document.querySelector(".js").style.width = "50%";
