@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="style.css">
 
         <link rel="icon" href="profil.png">
+
+        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
        
     </head>
 
@@ -120,34 +122,30 @@
         </footer>
 
         <script>
-            function salama() {
+            function salama(){
                 let anarana = document.getElementById("anarana").value.trim();
                 let email = document.getElementById("email").value.trim();
                 let hafatra = document.getElementById("hafatra").value.trim();
                 let message = document.getElementById("message");
 
-                let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
                 if (!anarana || !email || !hafatra) {
-                  message.style.color = "red";
-                  message.innerHTML = "Fenoy azafady ny saha rehetra ❌";
-                  return;
+                    message.style.color = "red";
+                    message.innerHTML = "Fenoy azafady ny saha rehetra  ❌";
+                    return;
                 }
 
-                if (anarana.length < 2) {
-                  message.style.color = "red";
-                  message.innerHTML = "Anarana fohy loatra ❌";
-                  return;
-                }
-
-                if (!emailRegex.test(email)) {
-                  message.style.color = "red";
-                  message.innerHTML = "Email tsy valide ❌";
-                  return;
-                }
-
-                message.style.color = "green";
-                message.innerHTML = "Hafatra voaray tsara ✔️ Misaotra anao " + anarana + " 😊";
+                emailjs.send("service_cll0b77", "template_qyz6bg1", {
+                    name: anarana,
+                    email: email,
+                    message: hafatra
+                })
+                .then(function(response) {
+                    message.style.color = "green";
+                    message.innerHTML = "Hafatra nalefa ✔️";
+                }, function(error){
+                    mesage.style.color = "red";
+                    message.innerHTML = "Nisy olana ❌";
+                });
             }
 
             // 👉 Dark mode + localstorage
@@ -194,6 +192,11 @@
             function toggleMenu(){
                document.querySelector(".menu").classList.toggle("show");
             }
+
+            (function(){
+                 emailjs.init("m6daUGhD5Ox2S4mQH");
+            })();
+               
         </script>
     </body>
 </html>
