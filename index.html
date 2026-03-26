@@ -2,15 +2,25 @@
 <html lang="mg">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Portfolio de Rafanomezantsoa Donnas, développeur web à Madagascar">
+        <meta name="description" content="Portfolio de Rafanomezantsoa Donnas, développeur web à Madagascar spécialisé HTML, CSS et JavaScript.">
+        <meta name="keywords" content="développeur web Madagascar, portfolio Donnas, HTML CSS JavaScript Madagascar">
+        <meta name="author" content="Rafanomezantsoa Donnas">
+        <meta name="robots" content="index, follow">
         <meta charset="UTF-8">
-        <title>Rafanomezantsoa Donnas | Développeur Web</title>
+        <meta property="og:title" content="Rafanomezantsoa Donnas - Développeur web">
+        <meta property="og:description" content="Portfolio professionnel de Donnas">
+        <meta property="og:image" content="https://rafanomezantsoa419.github.io/donnas-portfolio/profil.png">
+        <meta property="og:url" content="https://rafanomezantsoa419.github.io/donnas-portfolio/">
+        <title>Rafanomezantsoa Donnas | Développeur Web Madagascar</title>
 
         <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="style.css">
 
         <link rel="icon" href="profil.png">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
         <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
        
@@ -41,6 +51,7 @@
             <a href="#skills">Fahaiza-manao</a>
             <a href="#projet">Projet</a>
             <a href="#contact">Contact</a>
+            <a href="#services">Services</a>
          </div>
             
         </nav>
@@ -82,17 +93,17 @@
             <div class="projects">
 
                <div class="card">
-                  <img src="projet1.jpg">
+                  <img src="projet1.jpg" alt="Projet site personnel">
                   <h3>Site personnel</h3>
                   <p>Site CV développé avec HTML, CSS et JavaScript.</p>
-                  <button onclick="window.open('https://github.com/rafanomezantsoa419/donnas-portfolio', target="_blank")">Voir projet</button>
+                  <button onclick="window.open('https://github.com/rafanomezantsoa419/donnas-portfolio', '_blank')">Voir projet</button>
                </div>
 
                <div class="card">
-                  <img src="projet2.jpg">
+                  <img src="projet2.jpg" alt="Projet formulaire javasript">
                   <h3>Formulaire JavaScript</h3>
                   <p>Formulaire avec validation JavaScript.</p>
-                  <button onclick="window.open('https://github.com/rafanomezantsoa419/donnas-portfolio', target="_blank")">Voir projet</button>
+                  <button onclick="window.open('https://github.com/rafanomezantsoa419/donnas-portfolio', '_blank')">Voir projet</button>
                </div>
 
             </div>
@@ -104,6 +115,7 @@
             <p>GitHub: <a href="https://github.com/rafanomezantsoa419" target="_blank">Mon profil GitHub</a></p>
 
             <form id="contactForm">
+                <label>Anaranao</label>
                 <input type="text" id="anarana" placeholder="Anaranao">
                 <input type="email" id="email" placeholder="Email">
                 <textarea id="hafatra" placeholder="Hafatrao"></textarea>
@@ -111,6 +123,12 @@
                 <button type="button" onclick="salama()">Alefa</button>
                 <p id="message"></p>
             </form>
+        </section>
+
+        <section id="services">
+            <h2>Services</h2>
+            <p>Création de site web moderne</p>
+            <p>Design responsive</p>
         </section>
         </main>
 
@@ -170,7 +188,7 @@
             // 👉 Rehefa misokatra ny page
             window.onload = function () {
                // progress bar
-               document.querySelector(".github").style.width = "60%"
+               document.querySelector(".github").style.width = "60%";
                document.querySelector(".html").style.width = "80%";
                document.querySelector(".css").style.width = "70%";
                document.querySelector(".js").style.width = "50%";
