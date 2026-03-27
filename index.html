@@ -28,6 +28,8 @@
 
     <body>
 
+        <div id="loader"></div>
+
         <button class="dark-toggle" onclick="myFunction()">🌙</button>
         
         <header>
@@ -215,6 +217,10 @@
 
             window.addEventListener("scroll", revealOnScroll);
             revealOnScroll();
+
+            window.addEventListener("load", function(){
+                document.getElementById("loader").style.display = "none";
+            });
 
             function toggleMenu(){
                document.querySelector(".menu").classList.toggle("show");
