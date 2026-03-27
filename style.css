@@ -50,6 +50,7 @@
              }
 
              section {
+               color: white;
                background: rgba(255, 255, 255, 0.1);
                backdrop-filter: blur(10px);
                -webkit-backdrop-filter: blur(10px);
@@ -90,10 +91,12 @@
                 background: linear-gradient(45deg, #ff6a00, #ee0979);
                 color: white;
                 border: none;
-                padding: 10px 15px;
-                border-radius: 25px;
+                padding: 12px 18px;
+                border-radius: 30px;
                 cursor: pointer;
-                transition: 0.3s;
+                transition: all 0.3s ease;
+               position: relative;
+               overflow: hidden;
              }
 
              button:hover {
@@ -103,7 +106,7 @@
 
              button:active {
                 transform: scale(0.95);
-                background: #004a99;
+                opacity: 0.8;
              }
 
              @media(max-width:600px) {
@@ -150,7 +153,8 @@
              nav {
                 position: sticky;
                 top: 0;
-                background: #0066cc;
+                background: rgba(0,0,0,0.3);
+                backdrop-filter: blur(10px);
                 padding: 10px;
                 display: flex;
                 justify-content: center;
@@ -185,7 +189,7 @@
              }
 
              .progress {
-                background: #0066cc;
+                background: linear-grandient(90deg, #ff6a00, #ee0979);
                 text-align: right;
                 padding-top: 10px;
                 padding-bottom: 10px;
@@ -202,7 +206,7 @@
              footer {
                text-align: center;
                padding: 15px;
-               color: #777;
+               color: white;
              }
 
               footer a, #contact a {
@@ -229,14 +233,29 @@
                width: 280px;
                padding: 15px;
                text-align: center;
-               
                box-shadow: 0 8px 25px rgb(0,0,0,0.3);
-               transition: all 0.3s ease;
+               transition: all 0.4s ease;
+               position: relative;
+               overflow: hidden;
              }
 
+              .card::before {
+                content:"";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(120deg, transparent);
+                top: 0;
+                left: -100%;
+                transition: 0.5s;
+              }
+
+               .card:hover::before {
+                 left: 100%;
+               }
+
              .card:hover {
-               transform: translateY(-10px) scale(1.03);
-               box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+               transform: translateY(-10px) scale(1.05);
              }
 
              .card img {
@@ -256,5 +275,39 @@
              .profile:hover{
                transform: rotate(5deg) scale(1.1);
              }
+
+              h1, h2, p {
+                text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+              }
+
+              #loader {
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                background: #111;
+                top: 0;
+                left: 0;
+                z-index: 9999;
+              }
+
+              #loader::after {
+                content:"";
+                width: 50px;
+                height: 50px;
+                border: 5px solid #fff;
+                border-top: 5px solid #ff6a00;
+                border-radius: 50%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                animation: spin 1s linear infinite;
+              }
+
+              @keyframes spin {
+                100% {
+                  transform: translate(-50%, -50%) rotate(360deg);
+                }
+              }
 
         </style>
