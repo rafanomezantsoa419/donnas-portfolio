@@ -87,7 +87,7 @@
              }
 
              button {
-                background: linear-gradient(45deg, #ff6a00; #ee0979);
+                background: linear-gradient(45deg, #ff6a00, #ee0979);
                 color: white;
                 border: none;
                 padding: 10px 15px;
@@ -208,11 +208,11 @@
               footer a, #contact a {
                 color: #ff9800;
                 text-decoration: none;
-                font-weidht: bold;
+                font-weight: bold;
               }
 
               footer a:hover, #contact a:hover {
-                text-decoration: underlin;
+                text-decoration: underline;
               }
 
              .projects {
