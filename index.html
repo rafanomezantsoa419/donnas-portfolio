@@ -234,7 +234,7 @@
 
             window.onscroll = function() {
                 let scrollTop = document.documentElement.scrollTop;
-                let height = document.documentElement.scrollHeight - document.documentElement.clienHeight;
+                let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
                 let scrolled = (scrollTop / height) * 100;
 
                 document.getElementById("progress-bar").style.width = scrolled + "%";
@@ -255,8 +255,8 @@
                 let current = "";
 
                 section.forEach(section => {
-                    const sectionTop = section.offseTop - 100;
-                    if (scrollY >= sectionTOP) {
+                    const sectionTop = section.offsetTop - 100;
+                    if (scrollY >= sectionTop) {
                         current = section.getAttribute("id");
                     }
                 });
