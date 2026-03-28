@@ -28,6 +28,8 @@
 
     <body>
 
+        <div id="progress-bar"></div>
+
         <div id="loader"></div>
 
         <button class="dark-toggle" onclick="myFunction()">🌙</button>
@@ -229,6 +231,43 @@
             (function(){
                  emailjs.init("m6daUGhD5Ox2S4mQH");
             })();
+
+            window.onscroll = function() {
+                let scrollTop = document.documentElement.scrollTop;
+                let height = document.documentElement.scrollHeight - document.documentElement.clienHeight;
+                let scrolled = (scrollTop / height) * 100;
+
+                document.getElementById("progress-bar").style.width = scrolled + "%";
+            };
+
+            window.addEventListener("scroll", function(){
+                let nav = document.querySelector("nav");
+
+                if (window.scrollY > 50) {
+                    nav.classList.add("scrolled");
+                }
+            });
+
+            const sections = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll(".menu a");
+
+            window.addEventListener("scroll", () => {
+                let current = "";
+
+                section.forEach(section => {
+                    const sectionTop = section.offseTop - 100;
+                    if (scrollY >= sectionTOP) {
+                        current = section.getAttribute("id");
+                    }
+                });
+
+                navLinks.forEach(a => {
+                    a.classList.remove("active");
+                    if (a.getAttribute("href") === "#" + current) {
+                        a.classList.add("active");
+                    }
+                });
+            });
                
         </script>
     </body>
