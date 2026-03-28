@@ -148,7 +148,10 @@
                 .menu.show{
                   display: flex;
                 }
-             }
+
+                .menu a.active {
+                  color: #ff9800;
+                }
 
              nav {
                 position: sticky;
@@ -170,6 +173,12 @@
 
              nav a:hover {
                 text-decoration: underline;
+             }
+
+             nav.scrolled {
+               background: rgba(0,0,0,0.7);
+               backdrop-filter: blur(10px);
+               transition: 0.3s;
              }
 
              .contact {
@@ -197,6 +206,16 @@
                 height: 25px;
                 transition: width 2s;
                 font-size: 14px;
+             }
+
+             #progress-bar {
+               position: fixed;
+               top: 0;
+               left: 0;
+               height: 5px;
+               background: linear-gradient(90deg, #ff6a00, #ee0979);
+               width: 0%;
+               z-index: 9999;
              }
 
              .html, .css, .js, .github {
