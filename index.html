@@ -39,7 +39,7 @@
          <img src="profil.png" alt="Photo de Donnas">
 
             <h1>Rafanomezantsoa Donnas</h1>
-            <p id="typing">Portfolio personnel développé avec HTML, CSS et JavaScript avec animations, dark mode et responsive design.</p>
+            <p id="typing"></p>
 
             <a href="pdf/cv-donnas.pdf" download>
                <button>Télécharger mon CV</button>
@@ -222,10 +222,17 @@
 
             window.addEventListener("load", function(){
                 const loader = document.getElementById("loader");
+                
                 if(loader){
-                    loader.style.display = "none";
+                    loader.style.opacity = "0";
+                    setTimeout(() => {
+                        loader.style.display = "none";
+                    }, 500);
+                    
                 }
             });
+
+            window.open(url, "_blank", "noopener");
 
             function toggleMenu(){
                document.querySelector(".menu").classList.toggle("show");
@@ -280,11 +287,21 @@
             let index = 0;
 
             function typingEffect() {
-                if (index < text.length) {
-                    document.getElementById("typing").innerHTML += text.charAt(index);
-                    index++;
-                    setTimeout(typingEffect, 50);
+                const element = document.getElementById("typing");
+
+                if (!element) return;
+
+                element.innerHTML = "";
+
+                function type() {
+                    if (index < text.length) {
+                        element.innerHTML += text.charAt(index);
+                        index++;
+                        setTimeout(type, 50);
+                    }
                 }
+
+                type();
             }
 
             typingEffect();
