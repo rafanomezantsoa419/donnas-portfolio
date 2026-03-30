@@ -221,7 +221,10 @@
             revealOnScroll();
 
             window.addEventListener("load", function(){
-                document.getElementById("loader").style.display = "none";
+                const loader = document.getElementById("loader");
+                if(loader){
+                    loader.style.display = "none";
+                }
             });
 
             function toggleMenu(){
@@ -245,6 +248,8 @@
 
                 if (window.scrollY > 50) {
                     nav.classList.add("scrolled");
+                } else {
+                    nav.classList.remove("scrolled");
                 }
             });
 
@@ -254,7 +259,7 @@
             window.addEventListener("scroll", () => {
                 let current = "";
 
-                section.forEach(section => {
+                sections.forEach(section => {
                     const sectionTop = section.offsetTop - 100;
                     if (scrollY >= sectionTop) {
                         current = section.getAttribute("id");
