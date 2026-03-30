@@ -39,7 +39,7 @@
          <img src="profil.png" alt="Photo de Donnas">
 
             <h1>Rafanomezantsoa Donnas</h1>
-            <p>Portfolio personnel développé avec HTML, CSS et JavaScript avec animations, dark mode et responsive design.</p>
+            <p id="typing">Portfolio personnel développé avec HTML, CSS et JavaScript avec animations, dark mode et responsive design.</p>
 
             <a href="pdf/cv-donnas.pdf" download>
                <button>Télécharger mon CV</button>
@@ -259,21 +259,35 @@
             window.addEventListener("scroll", () => {
                 let current = "";
 
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop - 100;
-                    if (scrollY >= sectionTop) {
-                        current = section.getAttribute("id");
+                sections.forEach(sec => {
+                    const sectionTop = sec.offsetTop - 120;
+                    
+                    if (window.scrollY >= sectionTop) {
+                        current = sec.getAttribute("id");
                     }
                 });
 
-                navLinks.forEach(a => {
-                    a.classList.remove("active");
-                    if (a.getAttribute("href") === "#" + current) {
-                        a.classList.add("active");
+                navLinks.forEach(link => {
+                    link.classList.remove("active");
+                    
+                    if (link.getAttribute("href") === "#" + current) {
+                        link.classList.add("active");
                     }
                 });
             });
-               
+
+            const text = "Développeur web passionné | HTML CSS JavaScript";
+            let index = 0;
+
+            function typingEffect() {
+                if (index < text.length) {
+                    document.getElementById("typing").innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(typingEffect, 50);
+                }
+            }
+
+            typingEffect();
         </script>
     </body>
 </html>
