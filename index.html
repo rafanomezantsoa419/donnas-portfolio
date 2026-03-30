@@ -22,7 +22,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
        
     </head>
 
@@ -100,14 +100,14 @@
                   <img src="projet1.jpg" alt="Projet site personnel">
                   <h3>Site personnel</h3>
                   <p>Site CV développé avec HTML, CSS et JavaScript.</p>
-                  <button onclick="window.open('https://github.com/rafanomezantsoa419/donnas-portfolio', '_blank')">Voir projet</button>
+                  <button onclick="window.open('https://github.com/rafanomezantsoa419/donnas-portfolio', '_blank', 'noopener')">Voir projet</button>
                </div>
 
                <div class="card">
                   <img src="projet2.jpg" alt="Projet formulaire javasript">
                   <h3>Formulaire JavaScript</h3>
                   <p>Formulaire avec validation JavaScript.</p>
-                  <button onclick="window.open('https://github.com/rafanomezantsoa419/donnas-portfolio', '_blank')">Voir projet</button>
+                  <button onclick="window.open('https://github.com/rafanomezantsoa419/donnas-portfolio', '_blank', 'noopener')">Voir projet</button>
                </div>
 
             </div>
@@ -232,8 +232,6 @@
                 }
             });
 
-            window.open(url, "_blank", "noopener");
-
             function toggleMenu(){
                document.querySelector(".menu").classList.toggle("show");
             }
@@ -291,7 +289,7 @@
 
                 if (!element) return;
 
-                element.innerHTML = "";
+                let index = 0; // 👈 eto no apetraka
 
                 function type() {
                     if (index < text.length) {
@@ -300,11 +298,10 @@
                         setTimeout(type, 50);
                     }
                 }
-
-                type();
+                
+                element.innerHTML = "";
             }
 
-            typingEffect();
         </script>
     </body>
 </html>
