@@ -6,12 +6,15 @@
         <meta name="keywords" content="développeur web Madagascar, portfolio Donnas, HTML CSS JavaScript Madagascar">
         <meta name="author" content="Rafanomezantsoa Donnas">
         <meta name="robots" content="index, follow">
+        <meta name="theme-color" content="#764ba2">
         <meta charset="UTF-8">
         <meta property="og:title" content="Rafanomezantsoa Donnas - Développeur web">
         <meta property="og:description" content="Portfolio professionnel de Donnas">
         <meta property="og:image" content="https://rafanomezantsoa419.github.io/donnas-portfolio/profil.png">
         <meta property="og:url" content="https://rafanomezantsoa419.github.io/donnas-portfolio/">
-        <title>Rafanomezantsoa Donnas | Développeur Web Madagascar</title>
+        <meta property="og:type" content="website">
+        <meta property="og:locale" content="fr_FR">
+        <title>Développeur Web Madagascar | Donnas Portfolio HTML CSS JavaScript</title>
 
         <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 
@@ -21,6 +24,7 @@
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="canonical" href="https://rafanomezantsoa419.github.io/donnas-portfolio/">
 
         <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
        
@@ -36,7 +40,7 @@
         
         <header>
 
-         <img src="profil.png" alt="Photo de Donnas">
+         <img src="profil.png" loading="lazy" alt="Photo de Donnas">
 
             <h1>Rafanomezantsoa Donnas</h1>
             <p id="typing"></p>
@@ -97,14 +101,14 @@
             <div class="projects">
 
                <div class="card">
-                  <img src="projet1.jpg" alt="Projet site personnel">
+                  <img src="projet1.jpg" loading="lazy" alt="Projet site personnel">
                   <h3>Site personnel</h3>
                   <p>Site CV développé avec HTML, CSS et JavaScript.</p>
                   <button onclick="window.open('https://github.com/rafanomezantsoa419/donnas-portfolio', '_blank', 'noopener')">Voir projet</button>
                </div>
 
                <div class="card">
-                  <img src="projet2.jpg" alt="Projet formulaire javasript">
+                  <img src="projet2.jpg" loading="lazy" alt="Projet formulaire javasript">
                   <h3>Formulaire JavaScript</h3>
                   <p>Formulaire avec validation JavaScript.</p>
                   <button onclick="window.open('https://github.com/rafanomezantsoa419/donnas-portfolio', '_blank', 'noopener')">Voir projet</button>
@@ -115,7 +119,7 @@
 
         <section id="contact">
             <h2>Contact</h2>
-            <p>Email: <a href="mailto:rafanomezantsoadonnas5@gmail.com">Alefa mail</a></p>
+            <p>Email: <a href="mailto:rafanomezantsoadonnas5@gmail.com">rafanomezantsoadonnas5@gmail.com</a></p>
             <p>GitHub: <a href="https://github.com/rafanomezantsoa419" target="_blank">Mon profil GitHub</a></p>
 
             <form id="contactForm">
@@ -134,7 +138,22 @@
             <p>Création de site web moderne</p>
             <p>Design responsive</p>
         </section>
+
+        <section id="clients">
+            <h2>Mes services</h2>
+
+            <p>✔ Création de site web moderne</p>
+            <p>✔ Site responsive (mobile)</p>
+            <p>✔ Portfolio professinnel</p>
+            <p>✔ Disponible pour missions freelance</p>
+            <p>✔ Réponse rapide</p>
+            <p>✔ Travail sérieux</p>
+
+            <p><strong>Contactez-moi pour vos projets</strong></p>
+        </section>
         </main>
+
+        <button id="topBtn" onclick="scrollToTop()">⬆</button>
 
         <footer>
          <p>© 2026-Rafanomezantsoa Donnas</p>
@@ -286,10 +305,10 @@
 
             function typingEffect() {
                 const element = document.getElementById("typing");
-
                 if (!element) return;
 
-                let index = 0; // 👈 eto no apetraka
+                let index = 0;
+                element.innerHTML = "";
 
                 function type() {
                     if (index < text.length) {
@@ -298,8 +317,23 @@
                         setTimeout(type, 50);
                     }
                 }
-                
-                element.innerHTML = "";
+                type(); // ✅ Ity no zava-dehibe
+            }
+
+            typingEffect();
+
+            window.addEventListener("scroll", function(){
+                let btn = document.getElementById("topBtn");
+
+                if (window.scrollY > 300) {
+                    btn.style.display = "block";
+                } else {
+                    btn.style.display = "none";
+                }
+            });
+
+            function scrollToTop(){
+                window.scrollTo({top: 0, behavior: "smooth"});
             }
 
         </script>
