@@ -8,6 +8,7 @@
         <meta name="author" content="Rafanomezantsoa Donnas">
         <meta name="robots" content="index, follow">
         <meta name="theme-color" content="#764ba2">
+        <metaname="author" content="Donnas Web Déveloper Madagascar">
         <meta charset="UTF-8">
         <meta property="og:title" content="Rafanomezantsoa Donnas - Développeur web">
         <meta property="og:description" content="Portfolio professionnel de Donnas">
@@ -334,7 +335,7 @@
             document.querySelectorAll(".card").forEach(card => {
                 card.addEventListener("click", () => {
                     const link = card.getAttribute("data-link");
-                    window.open(link, "_blank");
+                    window.open(link, "_blank","noopener,noreferrer");
                 });
             });
 
