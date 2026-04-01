@@ -128,6 +128,7 @@
 
              button:hover {
                transform: scale(1.1);
+               box-shadow: 0 0 15px rgba(255, 106,0,0.7);
               
              }
 
@@ -141,9 +142,13 @@
              }
 
              @media(max-width:600px) {
-                section {
-                    width: 95%;
+                section { width: 95%; }
+               
+               .projects{
+                  flex-direction: column;
+                  align-items: center;
                 }
+               
                .menu a.active {
                  color: #ff9800;
                }
@@ -152,11 +157,6 @@
                  height: auto;
                }
              }
-
-                .projects{
-                  flex-direction: column;
-                  align-items: center;
-                }
 
                 .menu-btn{
                   display: block;
@@ -393,6 +393,8 @@
                 display: none;
                 padding: 10px;
                 border-radius: 50%;
+                opacity: 0;
+                transition: 0.3s;
               }
 
         </style>
