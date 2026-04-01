@@ -100,15 +100,22 @@
         <section id="projet">
             <h2> Mes Projets</h2>
 
+            <div class="filters">
+                <button onclick="filterProjects('all')">ALL</button>
+                <button onclick="filterProjects('html')">HTML</button>
+                <button onclick="filterProjects('css')">CSS</button>
+                <button onclick="filterProjects('js')">JS</button>
+            </div>
+
             <div class="projects">
 
-               <div class="card" data-link="https://github.com/rafanomezantsoa419/donnas-portfolio">
-                  <img src="projet1.jpg" loading="lazy" alt="Projet site personnel">
+               <div class="card" data-link="https://github.com/rafanomezantsoa419/donnas-portfolio" data-category="html">
+                  <img src="projet1.jpg" loading="lazy" alt="Projet site personnel Donnas">
                   <h3>Site personnel</h3>
                   <p>Site CV développé avec HTML, CSS et JavaScript.</p>
                </div>
 
-               <div class="card" data-link="https://github.com/rafanomezantsoa419/donnas-portfolio">
+               <div class="card" data-link="https://github.com/rafanomezantsoa419/donnas-portfolio" data-category="js">
                   <img src="projet2.jpg" loading="lazy" alt="Projet formulaire javasript">
                   <h3>Formulaire JavaScript</h3>
                   <p>Formulaire avec validation JavaScript.</p>
@@ -338,6 +345,20 @@
                     window.open(link, "_blank","noopener,noreferrer");
                 });
             });
+
+            function filterProjects(category) {
+                const cat = document.querySelectorAll(".card");
+
+                cards.forEach(card => {
+                    const cat = card.getAttribute("data-category");
+
+                    if (category === "all" || cat === category) {
+                        card.style.display = "block";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+            }
 
         </script>
     </body>
