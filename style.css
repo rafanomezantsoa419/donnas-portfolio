@@ -402,4 +402,13 @@
                 transition: 0.3s;
               }
 
+              .filters {
+                text-align: center;
+                margin: 20px;
+              }
+
+              .filters button {
+                margin: 5px;
+              }
+
         </style>
