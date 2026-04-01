@@ -104,14 +104,14 @@
                   <img src="projet1.jpg" loading="lazy" alt="Projet site personnel">
                   <h3>Site personnel</h3>
                   <p>Site CV développé avec HTML, CSS et JavaScript.</p>
-                  <button onclick="window.open('https://github.com/rafanomezantsoa419/donnas-portfolio', '_blank', 'noopener')">Voir projet</button>
+                  <button onclick="window.open<a href="https://github.com/rafanomezantsoa419/donnas-portfolio" target="_blank" rel="noopener">Voir projet</button>
                </div>
 
                <div class="card">
                   <img src="projet2.jpg" loading="lazy" alt="Projet formulaire javasript">
                   <h3>Formulaire JavaScript</h3>
                   <p>Formulaire avec validation JavaScript.</p>
-                  <button onclick="window.open('https://github.com/rafanomezantsoa419/donnas-portfolio', '_blank', 'noopener')">Voir projet</button>
+                  <button onclick="window.open<a href="https://github.com/rafanomezantsoa419/donnas-portfolio" target="_ blank" rel="noopener noreferrer">Voir projet</button>
                </div>
 
             </div>
@@ -136,20 +136,16 @@
         <section id="services">
             <h2>Services</h2>
             <p>Création de site web moderne</p>
-            <p>Design responsive</p>
-        </section>
-
-        <section id="clients">
-            <h2>Mes services</h2>
-
             <p>✔ Création de site web moderne</p>
             <p>✔ Site responsive (mobile)</p>
             <p>✔ Portfolio professinnel</p>
             <p>✔ Disponible pour missions freelance</p>
             <p>✔ Réponse rapide</p>
             <p>✔ Travail sérieux</p>
+            <p>Design responsive</p>
 
             <p><strong>Contactez-moi pour vos projets</strong></p>
+            
         </section>
         </main>
 
@@ -221,8 +217,6 @@
                   document.body.classList.add("dark-mode");
                }
             };
-
-            const section = document.querySelectorAll("section");
 
             function revealOnScroll() {
                 const trigger = window.innerHeight * 0.85;
@@ -335,6 +329,8 @@
             function scrollToTop(){
                 window.scrollTo({top: 0, behavior: "smooth"});
             }
+
+            btn.style.opacity = "1"; // rehefa miseho
 
         </script>
     </body>
