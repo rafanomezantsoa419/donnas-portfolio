@@ -8,7 +8,7 @@
         <meta name="author" content="Rafanomezantsoa Donnas">
         <meta name="robots" content="index, follow">
         <meta name="theme-color" content="#764ba2">
-        <metaname="author" content="Donnas Web Déveloper Madagascar">
+        <meta name="author" content="Donnas Web Déveloper Madagascar">
         <meta charset="UTF-8">
         <meta property="og:title" content="Rafanomezantsoa Donnas - Développeur web">
         <meta property="og:description" content="Portfolio professionnel de Donnas">
@@ -340,6 +340,7 @@
             btn.style.opacity = "1";
 
             document.querySelectorAll(".card").forEach(card => {
+                card.classList.add("show");
                 card.addEventListener("click", () => {
                     const link = card.getAttribute("data-link");
                     window.open(link, "_blank","noopener,noreferrer");
@@ -347,19 +348,27 @@
             });
 
             function filterProjects(category) {
-                const cat = document.querySelectorAll(".card");
+                const cards = document.querySelectorAll(".card");
 
                 cards.forEach(card => {
-                    const cat = card.getAttribute("data-category");
+                    const cardCategory = card.getAttribute("data-category");
 
-                    if (category === "all" || cat === category) {
-                        card.style.display = "block";
+                    if (category === "all" || cardCategory === category) {
+                        card.style.display = "";
                     } else {
                         card.style.display = "none";
                     }
                 });
             }
 
+            const filterButtons = document.querySelectorAll(".filters button");
+
+            filterButtonsforEach(btn => {
+                btn.addEventListener("click", () => {
+                    filterButtons.forEach(b => b.classList.remove("active"));
+                    btn.classList.add("active");
+                });
+            });
         </script>
     </body>
 </html>
