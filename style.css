@@ -200,12 +200,14 @@
              nav {
                 position: sticky;
                 top: 0;
+                z-index: 1000;
                 background: rgba(0,0,0,0.3);
                 backdrop-filter: blur(10px);
                 padding: 10px;
                 display: flex;
                 justify-content: center;
                 flex-wrap: wrap;
+               transition: all 0.3s ease;
              }
 
              nav a {
@@ -213,7 +215,17 @@
                 margin: 10px;
                 text-decoration: none;
                 font-weight: bold;
+               position: relative;
              }
+
+            nav a::after {
+              content: "";
+              position: absolute;
+              width: 0%;
+              height: 2px;
+              left: 0;
+              bottom: -5px;
+            }
 
              nav a:hover {
                 text-decoration: underline;
@@ -222,7 +234,8 @@
              }
 
              nav.scrolled {
-               background: rgba(0,0,0,0.7);
+               background: rgba(0,0,0,0.8);
+               box-shadow: 0 5px 20px rgba(0,0,0,0.3);
                backdrop-filter: blur(10px);
                transition: 0.3s;
              }
@@ -233,7 +246,7 @@
 
              html {
                 scroll-behavior: smooth;
-                scroll-padding-top: 90px;
+                scroll-padding-top: 100px;
              }
 
              * {box-sizing: border-box;}
