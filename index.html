@@ -211,8 +211,9 @@
             }
 
             // 👉 Rehefa misokatra ny page
-            window.onload = function () {
-               // progress bar
+            window.addEventListener("DOMContentLoaded", () => {
+
+                 // progress bar skills
                document.querySelector(".github").style.width = "60%";
                document.querySelector(".html").style.width = "80%";
                document.querySelector(".css").style.width = "70%";
@@ -222,7 +223,17 @@
                if (localStorage.getItem("theme") === "dark") {
                   document.body.classList.add("dark-mode");
                }
-            };
+
+                // cards
+                document.querySelectorAll(".card").forEach(card => {
+                    card.classList.add("show");
+
+                    card.addEventListener("click", () => {
+                        const link = card.getAttribute("data-link");
+                        window.open(link,"_blank","noopener,noreferrer");
+                    });
+                });
+            });
 
             const section = document.querySelectorAll("section");
 
@@ -339,14 +350,6 @@
             let btn = document.getElementById("topBtn");
             btn.style.opacity = "1";
 
-            document.querySelectorAll(".card").forEach(card => {
-                card.classList.add("show");
-                card.addEventListener("click", () => {
-                    const link = card.getAttribute("data-link");
-                    window.open(link, "_blank","noopener,noreferrer");
-                });
-            });
-
             function filterProjects(category) {
                 const cards = document.querySelectorAll(".card");
 
@@ -355,8 +358,10 @@
 
                     if (category === "all" || cardCategory === category) {
                         card.style.display = "";
+                        setTimeout(() => card.classList.add("show"), 50);
                     } else {
-                        card.style.display = "none";
+                        card.classList.remove("show");
+                        setTimeout(() => card.style.display = "none", 300);
                     }
                 });
             }
